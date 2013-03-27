@@ -18,6 +18,8 @@ end
 module Rmd
   class Application < Rails::Application
 
+    Mongoid.load!("config/mongoid1.yml")
+
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
       g.test_framework :rspec
