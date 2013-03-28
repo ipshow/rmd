@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!   #验证用户状态
   # GET /posts
   # GET /posts.json
   def index
