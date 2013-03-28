@@ -1,0 +1,26 @@
+p#notice = notice
+
+p
+  strong Content:
+  = @post.content
+
+
+h2 Comments
+- @post.comments.each do |comment|
+  p
+    strong Comment:
+    = comment.comment_content
+
+
+
+h2 Add a comment
+= form_for([@post, @post.comments.build]) do |f|
+  .field
+    = f.label :comment_content
+    = f.text_area :comment_content
+  .actions = f.submit
+
+
+= link_to 'Edit', edit_post_path(@post)
+'|
+= link_to 'Back', posts_path
