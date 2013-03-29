@@ -1,6 +1,7 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  mount_uploader :avatar, AvatarUploader  #  upload avatar
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -29,6 +30,14 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
 
+  ## Avatar
+
+  field :avatar, :type => String
+
+  validates_presence_of   :avatar
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
+
   ## Confirmable
   # field :confirmation_token,   :type => String
   # field :confirmed_at,         :type => Time
@@ -46,5 +55,5 @@ class User
   index({ email: 1 }, { unique: true, background: true })
   field :name, :type => String
   validates_presence_of :name
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :created_at, :updated_at, :avatar, :avatar_cache
 end
