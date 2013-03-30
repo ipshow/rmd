@@ -3,6 +3,7 @@ class User
   include Mongoid::Timestamps
   mount_uploader :avatar, AvatarUploader  #  upload avatar
   has_many :posts
+  has_many :comments
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

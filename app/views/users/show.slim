@@ -15,3 +15,9 @@ p
       strong 主题:
     p
       a href="#{post_path}" #{post.content}
+  - @user.comments.each do |comment|
+    p
+      strong 回复:
+    p
+      a href="#" #{comment.comment_content}
+

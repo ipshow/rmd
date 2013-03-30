@@ -12,7 +12,7 @@ p
 
 
 
-h2 Comments
+h4 Comments
 - @post.comments.each do |comment|
   p
     strong Comment:
@@ -20,7 +20,8 @@ h2 Comments
 
 
 
-h2 Add a comment
+
+h4 Add a comment
 = form_for([@post, @post.comments.build]) do |f|
   .field
     = f.label :comment_content
