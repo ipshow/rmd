@@ -8,7 +8,7 @@ class User
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :omniauthable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
@@ -39,6 +39,8 @@ class User
   validates_presence_of   :avatar
   validates_integrity_of  :avatar
   validates_processing_of :avatar
+
+
 
   ## Confirmable
   # field :confirmation_token,   :type => String
