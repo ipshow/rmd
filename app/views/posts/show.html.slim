@@ -1,8 +1,15 @@
 p#notice = notice
 
 p
-  strong Content:
+  strong 发起者:
+  = @username.name
+  = image_tag(@username.avatar)
+
+p
+  strong 主题:
   = @post.content
+
+
 
 
 h2 Comments

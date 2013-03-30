@@ -3,6 +3,8 @@ class Post
   include Mongoid::Timestamps
   field :content, type: String
   field :user_id, type: Integer
+  belongs_to :user
   has_many :comments
   validates_length_of :content, minimum: 6, maximum: 300
+  validates :user_id, presence: true
 end

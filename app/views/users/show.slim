@@ -10,3 +10,8 @@ p
   | User: #{@user.name}
 p
   | Email: #{@user.email if @user.email}
+  - @user.posts.each do |post|
+    p
+      strong 主题:
+    p
+      a href="#{post_path}" #{post.content}
