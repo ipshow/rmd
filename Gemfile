@@ -23,4 +23,4 @@ gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'rails_admin'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'   # 上传组件
-gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
+gem 'simple_form'
