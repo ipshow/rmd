@@ -1,17 +1,17 @@
 p#notice = notice
 
+
+
+h3
+  = @post.title
+
 p
-  strong 发起者:
   = @username.name
   = image_tag(@username.avatar)
 
 p
-  strong 主题:
-  = @post.title
-p
   strong 正文:
   = @post.content
-
 
 
 
@@ -25,11 +25,10 @@ h4 Comments
 
 
 h4 Add a comment
-= form_for([@post, @post.comments.build]) do |f|
+= simple_form_for([@post, @post.comments.build]) do |f|
   .field
-    = f.label :comment_content
-    = f.text_area :comment_content
-  .actions = f.submit
+    = f.input :comment_content, as: :text
+  .actions = f.button :submit, class: 'btn btn-primary'
 
 
 = link_to 'Edit', edit_post_path(@post)

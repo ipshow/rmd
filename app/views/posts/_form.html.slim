@@ -8,5 +8,5 @@
 
   .field
     = f.input :title,label: '主题',hint: 'You cannot change your username.'
-    = f.input :content,label: '内容'
-  .actions = f.submit 'Save'
+    = f.input :content,label: '内容', as: :text
+  .actions = f.button :submit, class: 'btn btn-primary'
