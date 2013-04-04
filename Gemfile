@@ -24,3 +24,5 @@ gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'rails_admin'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'   # 上传组件
 gem 'simple_form'
+gem 'rails_kindeditor', '~> 0.3.11'
+

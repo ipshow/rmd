@@ -11,7 +11,9 @@ p
 
 p
   strong 正文:
-  = @post.content
+  /解析html格式后输出
+  = @post.content.html_safe
+
 
 
 
@@ -19,7 +21,7 @@ h4 Comments
 - @post.comments.each do |comment|
   p
     strong Comment:
-    = comment.comment_content
+    = comment.comment_content.html_safe
 
 
 
@@ -27,7 +29,7 @@ h4 Comments
 h4 Add a comment
 = simple_form_for([@post, @post.comments.build]) do |f|
   .field
-    = f.input :comment_content, as: :text
+    = f.input :comment_content, as: :text, :as => :kindeditor, :label => false, :input_html => { :simple_mode => true,:width => 640, :height => 300 }
   .actions = f.button :submit, class: 'btn btn-primary'
 
 
